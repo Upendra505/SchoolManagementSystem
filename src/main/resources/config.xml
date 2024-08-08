@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<hibernate-configuration>
+    <session-factory>
+       <!--  Database connection settings -->
+       <property name="connection.driver:class">com.mysql.cj.jdbc.Driver</property>
+       <property name="connection.url">jdbc:mysql://localhost:3306/school</property>
+       <property name="hibernate.connection.username">root</property>
+       <property name="hibernate.connection.password">uppi@2880</property>
+       
+       
+  <property name="hibernate.current_session_context_class">thread</property>
+    <!-- JDBC connection pool settings -->
+    <property name="hibernate.c3p0.min_size">5</property>
+    <property name="hibernate.c3p0.max_size">20</property>
+
+       <!--  SQL Dialect -->
+       <property name="hibernate.dialect">org.hibernate.dialect.MySQL8Dialect</property>
+       <!-- Assume test is the database name -->
+       <property name="show_sql">true</property>
+
+       <!--  Drop and re-create the database schema on startup -->
+       <property name="hbm2ddl.auto">update</property>
+        <mapping class="com.management.Entity.SchoolDetails"></mapping>
+        <mapping class="com.management.Entity.StudentDetails"></mapping>
+         <mapping class="com.management.Entity.Attendance"></mapping>
+           <mapping class="com.management.Entity.Grades"></mapping>
+                 <mapping class="com.management.Entity.TeacherDetails"></mapping>
+           
+                
+ 
+    </session-factory>
+</hibernate-configuration>
